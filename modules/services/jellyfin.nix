@@ -16,8 +16,8 @@
     ];
   };
 
-  # Add jellyfin user to required groups for hardware transcoding
-  users.users.jellyfin.extraGroups = [ "video" "render" ];
+  # Add jellyfin user to required groups for hardware transcoding and media access
+  users.users.jellyfin.extraGroups = [ "video" "render" "media" ];
 
   # Create symlink for media access
   systemd.tmpfiles.rules = [

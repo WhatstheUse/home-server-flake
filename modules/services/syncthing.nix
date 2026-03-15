@@ -22,4 +22,14 @@
       folders = {};
     };
   };
+
+  # Grant Syncthing access to media storage locations
+  systemd.services.syncthing.serviceConfig = {
+    ReadWritePaths = [
+      "/storage/syncthing"
+      "/storage/media"
+      "/storage/audiobooks"
+      "/storage/ebooks"
+    ];
+  };
 }

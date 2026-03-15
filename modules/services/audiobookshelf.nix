@@ -11,8 +11,11 @@
     port = 13378;
   };
 
-  # Allow access to audiobook storage
+  # Allow access to audiobook and podcast storage
   systemd.services.audiobookshelf.serviceConfig = {
-    ReadWritePaths = [ "/storage/audiobooks" ];
+    ReadWritePaths = [ "/storage/audiobooks" "/storage/podcasts" "/storage/ebooks" ];
   };
+
+  # Add audiobookshelf to media group for shared access
+  users.users.audiobookshelf.extraGroups = [ "media" ];
 }

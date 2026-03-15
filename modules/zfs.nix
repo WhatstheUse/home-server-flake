@@ -27,14 +27,8 @@
 
   # Dataset Mounts
 
-  fileSystems."/storage/media/movies" = {
-    device = "storage/media/movies";
-    fsType = "zfs";
-    neededForBoot = false;
-  };
-
-  fileSystems."/storage/media/tv" = {
-    device = "storage/media/tv";
+  fileSystems."/storage/media/videos" = {
+    device = "storage/media/videos";
     fsType = "zfs";
     neededForBoot = false;
   };
@@ -51,6 +45,12 @@
     neededForBoot = false;
   };
 
+  fileSystems."/storage/podcasts" = {
+    device = "storage/podcasts";
+    fsType = "zfs";
+    neededForBoot = false;
+  };
+
   fileSystems."/storage/syncthing/sync" = {
     device = "storage/syncthing/sync";
     fsType = "zfs";
@@ -59,6 +59,12 @@
 
   fileSystems."/storage/shared" = {
     device = "storage/shared";
+    fsType = "zfs";
+    neededForBoot = false;
+  };
+
+  fileSystems."/storage/ebooks" = {
+    device = "storage/ebooks";
     fsType = "zfs";
     neededForBoot = false;
   };

@@ -64,13 +64,18 @@ echo "Phase 3: Creating datasets..."
 
 # Media datasets (1M recordsize for large files)
 zfs create -o mountpoint=legacy -o recordsize=1M storage/media
-zfs create -o mountpoint=legacy storage/media/movies
-zfs create -o mountpoint=legacy storage/media/tv
+zfs create -o mountpoint=legacy storage/media/videos
 zfs create -o mountpoint=legacy storage/media/music
 
 # Audiobooks
 zfs create -o mountpoint=legacy -o recordsize=1M storage/audiobooks
 zfs create -o mountpoint=legacy storage/audiobooks/library
+
+# Podcasts (1M recordsize for audio files)
+zfs create -o mountpoint=legacy -o recordsize=1M storage/podcasts
+
+# eBooks (1M recordsize for document files)
+zfs create -o mountpoint=legacy -o recordsize=1M storage/ebooks
 
 # Syncthing
 zfs create -o mountpoint=legacy storage/syncthing
@@ -89,8 +94,10 @@ echo "✓ All datasets created"
 
 echo ""
 echo "Phase 4: Creating mount directories..."
-mkdir -p /storage/media/{movies,tv,music}
+mkdir -p /storage/media/{videos,music}
 mkdir -p /storage/audiobooks/library
+mkdir -p /storage/podcasts
+mkdir -p /storage/ebooks
 mkdir -p /storage/syncthing/sync
 mkdir -p /storage/shared
 mkdir -p /var/lib/{jellyfin,audiobookshelf,syncthing}
