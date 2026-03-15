@@ -105,6 +105,7 @@
     isNormalUser = true;
     description = username;
     extraGroups = [ "networkmanager" "wheel" "render" "video" ];
+    shell = pkgs.fish;  # Set fish as default shell
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
@@ -151,6 +152,7 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     axel
     btop
+    caffeine-ng
     clamav
     claude-code
     duf
