@@ -24,5 +24,8 @@
     # Syncthing folders
     "d /storage/syncthing/sync 0755 ${username} users -"
     "d /var/lib/syncthing 0755 ${username} users -"
+
+    # Shared folder - user:users with full write permissions
+    "d /storage/shared 0775 ${username} users -"
   ];
 }
