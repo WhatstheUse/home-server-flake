@@ -5,7 +5,7 @@
   services.ollama = {
     enable = true;
     # CPU-only inference for Intel i3-N305 (no discrete GPU).
-    acceleration = null;
+    package = pkgs.ollama-cpu;
     # Localhost only — OpenCode and Home Assistant run on the same machine.
     # If cross-machine access is ever needed, use Tailscale ACLs rather than
     # binding to 0.0.0.0.
