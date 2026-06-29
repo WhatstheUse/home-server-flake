@@ -26,6 +26,7 @@
             ./system-config/hardware-configuration.nix
             ./modules/zfs.nix
             ./modules/networking.nix
+            ./modules/virtualisation.nix
             ./modules/services
           ];
         };
