@@ -185,7 +185,15 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  # Password auth disabled (brute-forceable); use SSH keys or Tailscale SSH for
+  # remote access. Local console + Plasma desktop remain available as recovery.
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+    };
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
