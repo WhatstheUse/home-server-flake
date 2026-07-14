@@ -165,6 +165,7 @@
     kitty
     kdePackages.partitionmanager
     micro
+    mpv
     mullvad-vpn
     nnn
     pcloud

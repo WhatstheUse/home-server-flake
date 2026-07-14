@@ -5,6 +5,10 @@
   networking.hostId = hostId;
 
   boot.supportedFilesystems = [ "zfs" ];
+  # Respect ZFS hostId guard rather than force-importing (new default from 26.11).
+  # Safe here: root is ext4 and the "storage" pool is imported later via extraPools,
+  # so this only guards against a genuine hostId mismatch (another host owning the pool).
+  boot.zfs.forceImportRoot = false;
   # Use default kernel (stable LTS) - ZFS support is built-in
   # If ZFS compatibility issues arise, pin to specific LTS: boot.kernelPackages = pkgs.linuxPackages_6_6;
   boot.zfs.extraPools = [ "storage" ];
