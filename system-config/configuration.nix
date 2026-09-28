@@ -116,6 +116,7 @@
   programs = {
     fish.enable = true;
     firefox.enable = true;
+    mosh.enable = true;
     neovim.enable = true;
     yazi.enable = true;
   };
@@ -170,6 +171,7 @@
     nnn
     pcloud
     ranger
+    ripgrep
     wget
     zellij
 
