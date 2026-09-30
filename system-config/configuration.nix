@@ -141,6 +141,14 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Nerd Font symbol glyphs (Yazi icons etc.) via fontconfig, so apps that
+  # rely on system font fallback (e.g. Konsole) render them like Kitty does
+  # (Kitty ships its own bundled copy, bypassing fontconfig entirely).
+  fonts = {
+    packages = with pkgs; [ nerd-fonts.symbols-only ];
+    fontconfig.defaultFonts.monospace = [ "Hack" "Symbols Nerd Font Mono" ];
+  };
+
   # Set default editor to helix
   environment.variables = {
     EDITOR = "hx";
