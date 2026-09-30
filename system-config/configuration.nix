@@ -104,7 +104,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = username;
-    extraGroups = [ "networkmanager" "wheel" "render" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "render" "video" "uinput" ];
     shell = pkgs.fish;  # Set fish as default shell
     packages = with pkgs; [
       kdePackages.kate
